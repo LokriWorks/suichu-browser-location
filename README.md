@@ -2,7 +2,7 @@
 
 一个运行在 Windows 本机的浏览器定位模拟工具。用地图选点或搜索地点改变专用 Edge 浏览器中网页读取到的坐标，也可以绘制路线，让坐标按指定速度持续移动。
 
-项目由 [zoe2026test](https://github.com/zoe2026test) 借助 AI 辅助开发和维护。
+项目由 [zoe2026test](https://github.com/zoe2026test) 开发和维护。
 
 ## 功能
 
