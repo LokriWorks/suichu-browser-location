@@ -16,7 +16,7 @@ body:
     id: environment
     attributes:
       label: 运行环境
-      description: Windows、Edge、Node.js 版本；搜索问题另写 Python 版本。
+      description: Windows、Edge 版本，以及使用 EXE 还是源码；只有源码运行时需要填写 Node.js 版本。
     validations:
       required: true
   - type: textarea
@@ -38,7 +38,7 @@ body:
     id: actual
     attributes:
       label: 实际结果和错误提示
-      description: 可添加截图；先遮住个人信息。start.cmd 可显示启动错误。
+      description: 可添加截图；先遮住个人信息。EXE 错误日志位于本机应用数据目录；源码版可用 start.cmd 查看启动错误。
     validations:
       required: true
   - type: checkboxes

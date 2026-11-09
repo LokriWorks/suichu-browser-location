@@ -1,11 +1,10 @@
 const fs=require('node:fs'),path=require('node:path');
 const home=process.env.USERPROFILE||process.env.HOME||'';
-const cached=path.join(home,'.cache/codex-runtimes/codex-primary-runtime/dependencies');
+const dataDir=process.env.SUICHU_DATA_DIR?path.resolve(process.env.SUICHU_DATA_DIR):__dirname;
+fs.mkdirSync(dataDir,{recursive:true});
 const edgeCandidates=[process.env.SUICHU_EDGE,...['ProgramFiles(x86)','ProgramFiles','LOCALAPPDATA'].map(k=>process.env[k]&&path.join(process.env[k],'Microsoft/Edge/Application/msedge.exe'))].filter(Boolean);
 const edge=edgeCandidates.find(p=>fs.existsSync(p));
 if(!edge)throw Error('未找到 Microsoft Edge。请安装 Edge 或设置 SUICHU_EDGE。');
 const legacy=path.resolve(__dirname,'../../work/edge-location-profile');
-const profile=process.env.SUICHU_PROFILE||(fs.existsSync(legacy)?legacy:path.join(__dirname,'.local','edge-profile'));
-const cachedPython=path.join(cached,'python/python.exe');
-const python=process.env.SUICHU_PYTHON||(fs.existsSync(cachedPython)?cachedPython:'python');
-module.exports={edge,profile,python};
+const profile=process.env.SUICHU_PROFILE||(process.env.SUICHU_DATA_DIR?path.join(dataDir,'edge-profile'):(fs.existsSync(legacy)?legacy:path.join(__dirname,'.local','edge-profile')));
+module.exports={edge,profile,dataDir};

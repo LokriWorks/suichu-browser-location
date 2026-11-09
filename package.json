@@ -1,9 +1,14 @@
 {
   "name": "suichu-browser-location",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "随处：支持选点、搜索和路线播放的本地网页定位控制台",
   "license": "MIT",
-  "engines": {"node": ">=22"},
-  "scripts": {"start": "node launch.cjs", "test": "node --test route.test.cjs"}
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node launch.cjs",
+    "test": "node --test route.test.cjs search.test.cjs"
+  }
 }

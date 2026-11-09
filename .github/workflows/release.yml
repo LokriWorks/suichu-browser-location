@@ -7,7 +7,7 @@ on:
       tag:
         description: Existing release tag to package
         required: true
-        default: v1.1.0
+        default: v1.2.0
 permissions:
   contents: write
 concurrency:
@@ -31,11 +31,20 @@ jobs:
         run: |
           $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
           if ($env:RELEASE_TAG -ne "v$version") { throw 'Tag and package version do not match' }
-      - run: node --test route.test.cjs
+      - run: npm test
+      - name: Build Windows EXE
+        shell: pwsh
+        run: ./scripts/build-windows.ps1
+      - name: Verify EXE with no Node or Python on PATH
+        shell: pwsh
+        env:
+          SUICHU_HEADLESS: '1'
+        run: ./scripts/smoke-windows.ps1
       - name: Build source bundle
         shell: pwsh
         run: ./scripts/package-release.ps1
       - name: Upload bundle and checksum
         shell: pwsh
         run: |
-          gh release upload "$env:RELEASE_TAG" "dist/suichu-browser-location-$env:RELEASE_TAG.zip" "dist/SHA256SUMS.txt" --clobber
+          ./scripts/write-checksums.ps1
+          gh release upload "$env:RELEASE_TAG" "dist/Suichu-$env:RELEASE_TAG-win-x64.exe" "dist/suichu-browser-location-$env:RELEASE_TAG.zip" "dist/SHA256SUMS.txt" --clobber

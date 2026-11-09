@@ -6,7 +6,7 @@
 
 [![Tests](https://github.com/zoe2026test/suichu-browser-location/actions/workflows/test.yml/badge.svg)](https://github.com/zoe2026test/suichu-browser-location/actions/workflows/test.yml)
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4)
-![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A522-339933)
+![EXE](https://img.shields.io/badge/EXE-%E5%86%85%E7%BD%AE%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83-147d75)
 [![MIT](https://img.shields.io/badge/License-MIT-147d75)](LICENSE)
 
 [下载版本](https://github.com/zoe2026test/suichu-browser-location/releases/latest) · [新手教程](docs/QUICKSTART.md) · [报告 Bug](https://github.com/zoe2026test/suichu-browser-location/issues/new?template=bug_report.yml) · [提出建议](https://github.com/zoe2026test/suichu-browser-location/issues/new?template=feature_request.yml)
@@ -17,7 +17,7 @@
 
 项目由 [zoe2026test](https://github.com/zoe2026test) 开发和维护。
 
-> **当前下载版本是源码运行包，仍需 Node.js 和 Edge；不是 EXE 安装包，也不是在线即用网站。** 只影响工具打开的专用 Edge 中的网页，不改变手机、Windows 系统或其他应用的位置。目前不支持微信小程序定位。
+> **推荐下载 Windows x64 EXE，双击即可打开，无需安装 Node.js 或 Python。** 程序继续使用系统中的 Microsoft Edge；不是在线即用网站。 只影响工具打开的专用 Edge 中的网页，不改变手机、Windows 系统或其他应用的位置。目前不支持微信小程序定位。
 
 ## 界面预览
 
@@ -41,12 +41,15 @@
 
 ## 第一次使用
 
-1. 从 **[Releases 下载运行包](https://github.com/zoe2026test/suichu-browser-location/releases/latest)**，解压到固定文件夹；开发者也可[下载最新源码](https://github.com/zoe2026test/suichu-browser-location/archive/refs/heads/main.zip)。
-2. 安装 **[Node.js 22 或更新版](https://nodejs.org/en/download)** 和 **[Microsoft Edge](https://www.microsoft.com/edge/download)**。地点名称搜索还需要 **[Python 3](https://www.python.org/downloads/windows/)**，手动坐标和地图选点不依赖 Python。
-3. 双击 **`启动网页定位.vbs`**。如果打不开，使用 **`start.cmd`**，在窗口中查看启动提示。
-4. 在工具自动打开的专用 Edge 中设置位置，再另开标签访问待测试网页，允许网站获取位置。
+1. 打开 **[Releases 下载页](https://github.com/zoe2026test/suichu-browser-location/releases/latest)**，下载 **`Suichu-v1.2.0-win-x64.exe`**。
+2. 把 EXE 保存到固定位置，双击打开。不需要安装 Node.js、Python，也不需要手动解压源码。
+3. 第一次运行会自动准备本机文件并打开专用 Edge。在控制台选位置或路线，再在同一浏览器另开标签访问待测试网页，并允许网站获取位置。
 
-**仅打开 `console.html` 或 GitHub 页面不会启用模拟。** 详细步骤、桌面快捷方式和常见问题见 **[新手教程](docs/QUICKSTART.md)**。
+适用于 **Windows 10 / 11 x64**，需要已安装 Microsoft Edge。运行环境已包含在 EXE 内，不在首次启动时下载运行环境。地图和在线地点搜索需要联网。
+
+本机文件保存在 `%LOCALAPPDATA%\Suichu`，EXE 不主动请求管理员权限。关闭所有专用浏览器窗口即可结束模拟。当前 EXE 未做商业代码签名；可使用发布页的 SHA256 校验文件核对下载内容。
+
+**[详细新手教程](docs/QUICKSTART.md)** · **[开发者源码](https://github.com/zoe2026test/suichu-browser-location/archive/refs/heads/main.zip)**
 
 ## 反馈与参与
 
@@ -74,7 +77,7 @@ flowchart LR
 | `console-controller.cjs` | 本机接口、浏览器连接和坐标更新 |
 | `route.cjs` | 距离计算、分段移动、暂停与循环 |
 | `launch.cjs` / `runtime.cjs` | 启动、运行环境寻找与服务复用 |
-| `search_places.py` / `geo.cjs` | 地点查询与坐标转换 |
+| `search.cjs` / `geo.cjs` | 地点查询与坐标转换 |
 | `route.test.cjs` | 路线引擎测试 |
 
 默认每 500 ms 更新一次坐标，使用单调时钟计算经过的时间。控制服务绑定 `127.0.0.1`，写操作校验随机令牌与请求来源。浏览器登录状态保存在本机，不会由本工具主动上传到 GitHub。
@@ -83,19 +86,19 @@ flowchart LR
 
 ```sh
 node launch.cjs
-node --test route.test.cjs
+node --test route.test.cjs search.test.cjs
 ```
 
-也可以使用 `npm start` 和 `npm test`；无需安装第三方 npm 运行依赖。
+源码开发需要 Node.js 22+，也可以使用 `npm start` 和 `npm test`；不再需要 Python，也无需安装第三方 npm 运行依赖。Windows EXE 构建方法见 [构建说明](windows/README.md)。
 
 单元测试覆盖速度、暂停、途中调速、终点、循环、重复路点和无效输入。真实 Edge 测试验证过地图选点、独立页面连续读取、暂停与恢复。GitHub Actions 执行单元测试和脚本语法检查，不能代表所有第三方网站都兼容。
 
 ## 当前边界与计划
 
 - 已实现：普通网页定位模拟和手动路线播放。
-- 当前版本：Windows + Edge；源码运行包。
-- 后续方向：更容易安装的桌面版本、路线保存与导入导出、更多浏览器验证。
-- 尚未提供：EXE 安装包、在线账号系统、系统级定位覆盖或微信小程序适配。
+- 当前版本：Windows 10 / 11 x64 EXE + Edge；同时保留源码运行包。
+- 后续方向：路线保存与导入导出、更多浏览器验证、桌面体验优化。
+- 尚未提供：独立浏览器内核、在线账号系统、系统级定位覆盖或微信小程序适配。
 
 电脑休眠会中断位置更新；关闭全部专用 Edge 窗口会结束本次模拟。重启不会自动播放路线。使用 IP 定位或额外校验位置的网站可能不采用模拟坐标。
 
@@ -107,6 +110,7 @@ node --test route.test.cjs
 
 - 坐标转换改编自 [hujiulong/gcoord](https://github.com/hujiulong/gcoord)，保留[原 MIT 声明](GCOORD-LICENSE.txt)。
 - 地图底图来自 [OpenStreetMap](https://www.openstreetmap.org/copyright)，地图和瓦片服务不适用本项目 MIT 许可。
-- 地点搜索依赖百度地图公开查询端点，服务可用性和格式可能改变；不可用时可使用坐标输入或地图选点。
+- 地点搜索默认使用 [Photon](https://github.com/komoot/photon) 的 OpenStreetMap 数据服务，仅在用户提交搜索时请求，带缓存和请求间隔；公共服务不保证可用性。可用 `SUICHU_SEARCH_URL` 指定兼容的服务端点；不可用时仍可选点、输入坐标或使用内置示例地点。
+- EXE 内置官方 Node.js Windows 运行时，保留其完整许可证，位于本机应用目录的 `runtime/NODE-LICENSE.txt`。
 
 GitHub **Releases** 用于发布下载版本；**Packages** 用于开发依赖包托管，本项目无需填满该栏目。

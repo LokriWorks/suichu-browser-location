@@ -14,3 +14,5 @@ jobs:
       - run: node --check console-controller.cjs
       - run: node --check launch.cjs
       - run: node --check runtime.cjs
+      - run: node --check search.cjs
+      - run: node --check scripts/verify-windows.cjs
