@@ -3,7 +3,7 @@
 ## 普通用户：下载一个 EXE 即可
 
 1. 打开[下载页](https://github.com/zoe2026test/suichu-browser-location/releases/latest)。
-2. 在 Assets 中选择 **Suichu-v1.2.0-win-x64.exe**，保存到固定位置并双击。
+2. 在 Assets 中选择 **Suichu-v1.2.1-win-x64.exe**，保存到固定位置并双击。
 3. 等待第一次准备本机文件，程序会自动打开专用 Edge 和定位控制台。
 4. 选好位置或路线后，在同一专用 Edge 中另开标签，访问待测试网页并允许位置权限。
 

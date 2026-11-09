@@ -1,6 +1,6 @@
 {
   "name": "suichu-browser-location",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "description": "随处：支持选点、搜索和路线播放的本地网页定位控制台",
   "license": "MIT",

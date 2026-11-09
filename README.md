@@ -41,7 +41,7 @@
 
 ## 第一次使用
 
-1. 打开 **[Releases 下载页](https://github.com/zoe2026test/suichu-browser-location/releases/latest)**，下载 **`Suichu-v1.2.0-win-x64.exe`**。
+1. 打开 **[Releases 下载页](https://github.com/zoe2026test/suichu-browser-location/releases/latest)**，下载 **`Suichu-v1.2.1-win-x64.exe`**。
 2. 把 EXE 保存到固定位置，双击打开。不需要安装 Node.js、Python，也不需要手动解压源码。
 3. 第一次运行会自动准备本机文件并打开专用 Edge。在控制台选位置或路线，再在同一浏览器另开标签访问待测试网页，并允许网站获取位置。
 

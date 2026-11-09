@@ -8,7 +8,7 @@
 
 脚本下载官方 Node.js 24.22.1 Windows x64 ZIP，并对照固定 SHA256 验证。EXE 内嵌运行时、Node 许可证和应用代码；不会在用户首次打开时再下载运行环境。
 
-启动器以普通用户权限运行，将文件准备到 `%LOCALAPPDATA%\Suichu\application\1.2.0`。每次启动核对文件清单与 SHA256，使用互斥量避免同时解压；启动隐藏的内置 Node 服务，再由服务打开系统 Edge。目标位置、浏览器资料和日志保存在版本目录之外，升级时可继续使用。
+启动器以普通用户权限运行，将文件准备到 `%LOCALAPPDATA%\Suichu\application\1.2.1`。每次启动核对文件清单与 SHA256，使用互斥量避免同时解压；启动隐藏的内置 Node 服务，再由服务打开系统 Edge。目标位置、浏览器资料和日志保存在版本目录之外，升级时可继续使用。
 
 搜索通过 EXE 的 `--search-http` 内部操作使用 Windows HTTPS，不依赖 Python、PowerShell 搜索脚本或用户安装的 Node。只接受 HTTPS 输入，响应大小和超时均有限制。
 

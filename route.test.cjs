@@ -1,5 +1,5 @@
 const {test}=require('node:test');const assert=require('node:assert/strict');const {Route,distance}=require('./route.cjs');
-const points=[{latitude:30.67,longitude:104.15},{latitude:30.671,longitude:104.15},{latitude:30.671,longitude:104.151}];
+const points=[{latitude:48.858,longitude:2.294},{latitude:48.859,longitude:2.294},{latitude:48.859,longitude:2.295}];
 test('distance and timed movement follow metres per second',()=>{const r=new Route();r.start(points,3.6,false,0);r.advance(10000);assert.equal(r.travelled,10);assert.ok(Math.abs(distance(points[0],r.position())-10)<.01);});
 test('pause excludes elapsed time and speed changes apply from change time',()=>{const r=new Route();r.start(points,3.6,false,0);r.pause(10000);r.advance(40000);assert.equal(r.travelled,10);r.resume(50000);r.change(7.2,false,60000);r.advance(65000);assert.equal(r.travelled,30);});
 test('completion remains exactly at endpoint',()=>{const r=new Route();r.start(points,300,false,0);r.advance(1000000);assert.equal(r.status,'completed');assert.deepEqual(r.position(),points.at(-1));r.advance(2000000);assert.equal(r.travelled,r.total);});

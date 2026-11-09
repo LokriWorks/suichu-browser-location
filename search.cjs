@@ -24,7 +24,7 @@ function parsePlaces(data){
 
 async function searchPlaces(query,request=fetch){
   const value=String(query).trim();if(!value||value.length>160)throw Error('请输入 1–160 个字的地点名称。');
-  const aliases=['成都理工大学综合实验大楼','成都理工大学综合实验楼','成都理工大学新实验大楼'];
+  const aliases=['巴黎埃菲尔铁塔','埃菲尔铁塔','TourEiffel','EiffelTower'];
   if(aliases.includes(value.replace(/[-\s]/g,'')))return[{name:example.name,address:'内置示例地点',longitude:example.wgs84[0],latitude:example.wgs84[1]}];
   const task=async()=>{try{
     const saved=cache.get(value);if(request===fetch&&saved&&saved.expires>Date.now())return saved.places;
