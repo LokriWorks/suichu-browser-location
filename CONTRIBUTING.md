@@ -4,7 +4,7 @@
 
 ## 反馈问题
 
-先搜索 [Issues](https://github.com/zoe2026test/suichu-browser-location/issues)。如果没有相同问题，使用 Bug 或功能建议表单，写清楚环境、操作和期望行为。
+先搜索 [Issues](https://github.com/LokriWorks/suichu-browser-location/issues)。如果没有相同问题，使用 Bug 或功能建议表单，写清楚环境、操作和期望行为。
 
 不要提交浏览器登录数据、真实位置轨迹、账号信息或密钥。复现示例可使用公共示例坐标。
 

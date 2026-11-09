@@ -2,7 +2,7 @@
 
 ## 普通用户：下载一个 EXE 即可
 
-1. 打开[下载页](https://github.com/zoe2026test/suichu-browser-location/releases/latest)。
+1. 打开[下载页](https://github.com/LokriWorks/suichu-browser-location/releases/latest)。
 2. 在 Assets 中选择 **Suichu-v1.2.1-win-x64.exe**，保存到固定位置并双击。
 3. 等待第一次准备本机文件，程序会自动打开专用 Edge 和定位控制台。
 4. 选好位置或路线后，在同一专用 Edge 中另开标签，访问待测试网页并允许位置权限。
@@ -38,7 +38,7 @@ EXE 已包含运行环境，首次启动不下载运行环境。地图和地点�
 
 **地点搜索不可用？** 试试“城市 + 地点”，或使用地图选点、经纬度输入及内置快捷地点。服务可能暂时不可用；不需要为此安装 Python。
 
-**启动失败？** 查看 `%LOCALAPPDATA%\Suichu` 中的 `launcher-error.txt` 或 `launch-error.txt`，通过[Bug 表单](https://github.com/zoe2026test/suichu-browser-location/issues/new?template=bug_report.yml)反馈。日志请先遮住个人路径等信息。
+**启动失败？** 查看 `%LOCALAPPDATA%\Suichu` 中的 `launcher-error.txt` 或 `launch-error.txt`，通过[Bug 表单](https://github.com/LokriWorks/suichu-browser-location/issues/new?template=bug_report.yml)反馈。日志请先遮住个人路径等信息。
 
 **已有旧源码版怎么办？** 旧源码版仍可独立使用，EXE 默认使用自己的本机资料目录。它不会导入旧浏览器的登录数据。
 

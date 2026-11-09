@@ -4,21 +4,21 @@
 
 在地图上选点，让网页位置沿着你画的路线移动。
 
-[![Tests](https://github.com/zoe2026test/suichu-browser-location/actions/workflows/test.yml/badge.svg)](https://github.com/zoe2026test/suichu-browser-location/actions/workflows/test.yml)
+[![Tests](https://github.com/LokriWorks/suichu-browser-location/actions/workflows/test.yml/badge.svg)](https://github.com/LokriWorks/suichu-browser-location/actions/workflows/test.yml)
 ![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4)
 ![EXE](https://img.shields.io/badge/EXE-%E5%86%85%E7%BD%AE%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83-147d75)
 [![MIT](https://img.shields.io/badge/License-MIT-147d75)](LICENSE)
 
-[下载版本](https://github.com/zoe2026test/suichu-browser-location/releases/latest) · [新手教程](docs/QUICKSTART.md) · [报告 Bug](https://github.com/zoe2026test/suichu-browser-location/issues/new?template=bug_report.yml) · [提出建议](https://github.com/zoe2026test/suichu-browser-location/issues/new?template=feature_request.yml)
+[下载版本](https://github.com/LokriWorks/suichu-browser-location/releases/latest) · [新手教程](docs/QUICKSTART.md) · [报告 Bug](https://github.com/LokriWorks/suichu-browser-location/issues/new?template=bug_report.yml) · [提出建议](https://github.com/LokriWorks/suichu-browser-location/issues/new?template=feature_request.yml)
 
 </div>
 
 > [!NOTE]
-> **本项目持续更新中，将结合实际使用与测试逐步完善功能和兼容性。** 已验证结果与实验功能会明确标注，欢迎通过 [Issues](https://github.com/zoe2026test/suichu-browser-location/issues) 反馈测试情况、问题和建议。
+> **本项目持续更新中，将结合实际使用与测试逐步完善功能和兼容性。** 已验证结果与实验功能会明确标注，欢迎通过 [Issues](https://github.com/LokriWorks/suichu-browser-location/issues) 反馈测试情况、问题和建议。
 
 随处是运行在 Windows 本机的网页定位模拟工具，适合网页地图、位置服务和路线交互的开发测试。支持地点搜索、地图选点、经纬度输入及可调速的路线播放。
 
-项目由 [zoe2026test](https://github.com/zoe2026test) 开发和维护。
+项目由 [LokriWorks](https://github.com/LokriWorks) 开发和维护。
 
 > **推荐下载 Windows x64 EXE，双击即可打开，无需安装 Node.js 或 Python。** 程序继续使用系统中的 Microsoft Edge；不是在线即用网站。 只影响工具打开的专用 Edge 中的网页，不改变手机、Windows 系统或其他应用的位置。目前不支持微信小程序定位。
 
@@ -44,7 +44,7 @@
 
 ## 第一次使用
 
-1. 打开 **[Releases 下载页](https://github.com/zoe2026test/suichu-browser-location/releases/latest)**，下载 **`Suichu-v1.2.1-win-x64.exe`**。
+1. 打开 **[Releases 下载页](https://github.com/LokriWorks/suichu-browser-location/releases/latest)**，下载 **`Suichu-v1.2.2-win-x64.exe`**。
 2. 把 EXE 保存到固定位置，双击打开。不需要安装 Node.js、Python，也不需要手动解压源码。
 3. 第一次运行会自动准备本机文件并打开专用 Edge。在控制台选位置或路线，再在同一浏览器另开标签访问待测试网页，并允许网站获取位置。
 
@@ -52,13 +52,13 @@
 
 本机文件保存在 `%LOCALAPPDATA%\Suichu`，EXE 不主动请求管理员权限。关闭所有专用浏览器窗口即可结束模拟。当前 EXE 未做商业代码签名；可使用发布页的 SHA256 校验文件核对下载内容。
 
-**[详细新手教程](docs/QUICKSTART.md)** · **[开发者源码](https://github.com/zoe2026test/suichu-browser-location/archive/refs/heads/main.zip)**
+**[详细新手教程](docs/QUICKSTART.md)** · **[开发者源码](https://github.com/LokriWorks/suichu-browser-location/archive/refs/heads/main.zip)**
 
 ## 反馈与参与
 
-- **[报告 Bug](https://github.com/zoe2026test/suichu-browser-location/issues/new?template=bug_report.yml)**：填写系统版本、操作步骤、预期与实际结果。
-- **[提出建议](https://github.com/zoe2026test/suichu-browser-location/issues/new?template=feature_request.yml)**：说明使用场景和希望改善的体验。
-- **[查看已有反馈](https://github.com/zoe2026test/suichu-browser-location/issues)**，提交前可以先搜索相同问题。
+- **[报告 Bug](https://github.com/LokriWorks/suichu-browser-location/issues/new?template=bug_report.yml)**：填写系统版本、操作步骤、预期与实际结果。
+- **[提出建议](https://github.com/LokriWorks/suichu-browser-location/issues/new?template=feature_request.yml)**：说明使用场景和希望改善的体验。
+- **[查看已有反馈](https://github.com/LokriWorks/suichu-browser-location/issues)**，提交前可以先搜索相同问题。
 - 想修改代码或贡献功能？请阅读 **[贡献指南](CONTRIBUTING.md)**。
 
 GitHub 反馈需要登录 GitHub；软件本身不要求注册账号。截图和日志请先遮住个人信息。
@@ -105,7 +105,7 @@ node --test route.test.cjs search.test.cjs
 
 电脑休眠会中断位置更新；关闭全部专用 Edge 窗口会结束本次模拟。重启不会自动播放路线。使用 IP 定位或额外校验位置的网站可能不采用模拟坐标。
 
-**[版本记录](CHANGELOG.md)** · **[发布说明](https://github.com/zoe2026test/suichu-browser-location/releases)**
+**[版本记录](CHANGELOG.md)** · **[发布说明](https://github.com/LokriWorks/suichu-browser-location/releases)**
 
 ## 许可与鸣谢
 

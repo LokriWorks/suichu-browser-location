@@ -32,7 +32,7 @@ async function searchPlaces(query,request=fetch){
     const url=new URL(process.env.SUICHU_SEARCH_URL||'https://photon.komoot.io/api/');
     if(url.protocol!=='https:'&&!(url.protocol==='http:'&&['localhost','127.0.0.1','[::1]'].includes(url.hostname)))throw Error('Invalid search endpoint');
     url.searchParams.set('q',value);url.searchParams.set('limit','8');
-    const response=request===fetch&&process.platform==='win32'&&process.env.SUICHU_NATIVE_HTTP_EXE?await nativeRequest(url.href):await request(url.href,{signal:AbortSignal.timeout(15000),headers:{'User-Agent':'SuichuBrowserLocation/1.2.0 (+https://github.com/zoe2026test/suichu-browser-location)'}});
+    const response=request===fetch&&process.platform==='win32'&&process.env.SUICHU_NATIVE_HTTP_EXE?await nativeRequest(url.href):await request(url.href,{signal:AbortSignal.timeout(15000),headers:{'User-Agent':'SuichuBrowserLocation/1.2.0 (+https://github.com/LokriWorks/suichu-browser-location)'}});
     if(!response.ok)throw Error('HTTP '+response.status);
     const text=await response.text();if(text.length>2*1024*1024)throw Error('Response too large');
     const places=parsePlaces(JSON.parse(text));

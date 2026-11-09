@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Net;
 
 [assembly: AssemblyTitle("随处 · 网页定位")]
-[assembly: AssemblyCompany("zoe2026test")]
+[assembly: AssemblyCompany("LokriWorks")]
 [assembly: AssemblyProduct("Suichu Browser Location")]
 [assembly: AssemblyVersion("__VERSION__.0")]
 
@@ -29,7 +29,7 @@ internal static class Launcher {
             var request = (HttpWebRequest)WebRequest.Create(address);
             request.Timeout = 15000;
             request.ReadWriteTimeout = 15000;
-            request.UserAgent = "SuichuBrowserLocation/1.2.0 (+https://github.com/zoe2026test/suichu-browser-location)";
+            request.UserAgent = "SuichuBrowserLocation/1.2.0 (+https://github.com/LokriWorks/suichu-browser-location)";
             request.Accept = "application/json";
             using (var response = request.GetResponse())
             using (var input = response.GetResponseStream())
