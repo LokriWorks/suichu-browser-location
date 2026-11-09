@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 先查看新手教程
+    url: https://github.com/zoe2026test/suichu-browser-location/blob/main/docs/QUICKSTART.md
+    about: 下载、启动、路线操作与故障排查
