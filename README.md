@@ -21,7 +21,7 @@
 
 ## 界面预览
 
-![随处网页定位界面：地图选点、路线规划和速度控制](docs/images/console.png)
+![随处网页定位界面：地图选点、路线规划和速度控制](docs/images/console-paris.png)
 
 截图为公开示例地点和路线选点预览。
 
