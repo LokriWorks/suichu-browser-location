@@ -1,0 +1,16 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  route-tests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - run: node --check console-controller.cjs
+      - run: node --check launch.cjs
+      - run: node --check runtime.cjs

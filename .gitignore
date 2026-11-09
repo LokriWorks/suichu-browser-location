@@ -1,0 +1,12 @@
+.local/
+node_modules/
+status.json
+target.json
+stop.request
+*-error.txt
+*verification.png
+*validation.json
+*.log
+__pycache__/
+.env
+.env.*
