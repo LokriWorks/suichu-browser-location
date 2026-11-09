@@ -13,6 +13,9 @@
 
 </div>
 
+> [!NOTE]
+> **本项目持续更新中，将结合实际使用与测试逐步完善功能和兼容性。** 已验证结果与实验功能会明确标注，欢迎通过 [Issues](https://github.com/zoe2026test/suichu-browser-location/issues) 反馈测试情况、问题和建议。
+
 随处是运行在 Windows 本机的网页定位模拟工具，适合网页地图、位置服务和路线交互的开发测试。支持地点搜索、地图选点、经纬度输入及可调速的路线播放。
 
 项目由 [zoe2026test](https://github.com/zoe2026test) 开发和维护。
