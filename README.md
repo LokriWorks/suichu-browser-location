@@ -4,6 +4,27 @@
 
 项目由 [zoe2026test](https://github.com/zoe2026test) 开发和维护。
 
+## 下载与第一次使用
+
+**当前是本机运行的源码版，还没有在线即用网站或免安装 EXE。**
+
+[下载源码 ZIP](https://github.com/zoe2026test/suichu-browser-location/archive/refs/heads/main.zip) · [报告问题](https://github.com/zoe2026test/suichu-browser-location/issues/new?labels=bug&title=%5BBug%5D%20) · [提出建议](https://github.com/zoe2026test/suichu-browser-location/issues/new?title=%5B建议%5D%20)
+
+1. 下载并解压源码 ZIP；不要直接在压缩包内运行。
+2. 安装 [Microsoft Edge](https://www.microsoft.com/edge/download)、[Node.js 22 或更新版](https://nodejs.org/en/download)；地点搜索还需 [Python 3](https://www.python.org/downloads/windows/)。
+3. 在解压后的文件夹找到 **启动网页定位.vbs** 并双击。找不到文件时，可在文件资源管理器里开启“查看 → 显示 → 文件扩展名”。
+4. 程序会自动打开专用 Edge 和控制台。定位或选路线后，在这个专用浏览器中另开标签页访问目标网页，并允许网站获取位置。
+
+**仅在普通 Edge 中打开本项目的 GitHub 页面或 `console.html`，不能启用定位。** 必须启动配套本地程序；下面有详细操作和路线说明。
+
+### 反馈问题或建议
+
+点击上方反馈链接，在 GitHub 登录后提交。请写明 Windows / Edge 版本、操作步骤、预期结果和实际结果；截图请遮住账户等个人信息。
+
+### 为什么 Releases 和 Packages 为空？
+
+当前只发布了源码，尚未发布正式 Release 下载版本。GitHub Packages 是开发用软件包的托管区，不是普通 Windows 安装包的下载按钮；本项目目前没有发布此类包。上面的源码 ZIP 链接现在即可使用，但仍需先安装运行环境。
+
 ## 功能
 
 - 搜索“城市 + 地点名称”，按回车定位，支持同名地点候选。
